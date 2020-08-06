@@ -1,0 +1,32 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: "Bison 'goldeagle' Fan"
+  description: "tdengine role"
+  company: "bitseed.cn"
+  license: "license (Apache-2.0)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: centos
+      versions:
+        - 8
+    - name: debian
+      versions:
+        - all
+    - name: fedora
+      versions:
+        - all
+    - name: kali
+      versions:
+        - all
+    - name: ubuntu
+      versions:
+        - bionic
+        - focal
+  galaxy_tags:
+    - tsdb
+    - metrics
+    - monitor
+    - tdengine
+    - taosd

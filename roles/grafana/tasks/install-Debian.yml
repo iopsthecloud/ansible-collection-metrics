@@ -1,0 +1,28 @@
+---
+
+- name: Install deps
+  apt:
+    pkg: [
+      "adduser",
+      "libfontconfig1",
+      "apt-transport-https"
+    ]
+    state: present
+
+- name: Download deb file
+  get_url:
+    url:  "https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_{{ version }}_amd64.deb"
+    dest: "/tmp/grafana.deb"
+    mode: "0755"
+    checksum: "sha256:{{ sha256sum }}"
+
+- name: Install grafana
+  apt:
+    deb: "/tmp/grafana.deb"
+    state: present
+  notify: start grafana
+
+- name: Cleanup grafana deb file
+  file:
+    path: "/tmp/grafana.deb"
+    state: absent

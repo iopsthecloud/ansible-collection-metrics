@@ -1,0 +1,13 @@
+---
+
+- name: start tdendgine
+  service:
+    name: taosd
+    state: started
+    enabled: yes
+
+- name: restart tdendgine
+  service:
+    name: taosd
+    state: restarted
+    enabled: yes

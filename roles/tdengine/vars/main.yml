@@ -1,0 +1,5 @@
+---
+
+version: "2.20.1"
+sha256sum: "8fb248b579b8b9a88dd9b1686f7f68db7071960a45b28619145d3a4037375dcb"
+tar_url: "https://mirrors.tuna.tsinghua.edu.cn/github-release/prometheus/prometheus/LatestRelease/prometheus-2.20.1.linux-amd64.tar.gz"
