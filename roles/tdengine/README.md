@@ -16,7 +16,7 @@ NONE
 
 ## Example Playbook
 
-    - hosts: dashservers
+    - hosts: tdengine-servers
       roles:
         - { role: goldeagle.metrics.tdengine }
 

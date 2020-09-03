@@ -1,0 +1,29 @@
+---
+
+- name: Install deps
+  dnf:
+    name:
+      - gcc
+      - gcc-c++
+      - make
+      - cmake
+      - epel-release
+      - git
+    state: latest
+
+- name: Get the source codes
+  git:
+    repo:  "{{ git_repo }}"
+    dest: "/opt/taosdata-TDengine"
+    update: yes
+
+- name: Make target directory
+  file:
+    path: "/opt/taosdata-TDengine/target"
+    state: directory
+    mode: '0644'
+
+- name: Compile & install tdengine
+  shell:
+    cmd: "cmake .. && cmake --build . && make install"
+    chdir: "/opt/taosdata-TDengine/target/"
