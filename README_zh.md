@@ -79,6 +79,13 @@ $ sudo passwd {{ your_ansible_user }}
 $ mkdir -p ~/.ssh
 ```
 
+切换用户：
+```bash
+$ sudo su - {{ your_ansible_user }}
+$ mkdir -p ~/.ssh
+```
+
+
 生成用户的密钥对：
 ```bash
 $ ssh-keygen -t rsa -b 4096 -C "{{ your_ansible_user }}"

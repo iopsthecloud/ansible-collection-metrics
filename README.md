@@ -9,7 +9,7 @@ Ansible collections for metric monitoring & IoT data streaming.
 ## Table of Contents
 1. [Description](#chapter-1)
 2. [Technical Overview](#chapter-2)<br>
-  2.1. [PHP Extensions & Tools](#chapter-2-1)<br>
+  2.1. [Softwares Intro](#chapter-2-1)<br>
   2.2. [Supported OSs](#chapter-2-3)
 1. [Quick Start](#chapter-3)
 2. [Software Lists](#chapter-4)<br>
@@ -24,7 +24,7 @@ Includes some popular softwares such like prometheus or grafana.
 
 ## 2. Technical Overview <a id="chapter-2"></a>
 
-### 2.1. PHP Extensions & Tools <a id="chapter-2-1"></a>
+### 2.1. Softwares Intro <a id="chapter-2-1"></a>
 
 * chronograf - a dashboard in TICK stack
 * grafana - the most popular metric monitoring dashboard
@@ -49,9 +49,14 @@ Includes some popular softwares such like prometheus or grafana.
 ### 3.1. Install ansible
 
 First of all, download "ansible"
-- Linux:
+- Debian & Ubuntu:
 ```bash
-$ apt install ansible
+$ sudo apt install ansible
+```
+
+- Centos 8 & Fedora 32:
+```bash
+$ sudo dnf install ansible
 ```
 
 - MacOS:
@@ -59,17 +64,22 @@ $ apt install ansible
 $ brew install ansible
 ```
 
-- Github 仓库
+- From github repository:
 ```bash
 $ git clone https://github.com/ansible/ansible
 ```
 
 ### 3.2. Add a user for ansible
 
-Add user:
+Add an ansible user:
 ```bash
-$ useradd {{ your_ansible_user }}-m -G users,sudo -s /bin/bash
-$ passwd
+$ sudo useradd {{ your_ansible_user }}-m -G users,sudo -s /bin/bash
+$ sudo passwd {{ your_ansible_user }}
+```
+
+Become this ansible user:
+```bash
+$ sudo su - {{ your_ansible_user }}
 $ mkdir -p ~/.ssh
 ```
 
@@ -114,9 +124,6 @@ Then you can use the roles from the collection in your playbooks (playbook.yml e
 
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    php_install_composer: true
-    php_install_pecl: true
-    php_install_swoole: true
 
   collections:
     - goldeagle.metrics
