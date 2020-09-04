@@ -1,30 +1,30 @@
-# Ansible Collections - goldeagle.metrics | [中文](README_zh.md)
+# Ansible Collections - goldeagle.metrics | [English](README.md)
 
-Ansible collections for metric monitoring & IoT data streaming.
+指标数据和物联网数据流处理相关的 ansible 集合
 
 [<img src="https://img.shields.io/github/license/goldeagle/ansible-collection-metrics?style=flat-square">](./LICENSE)
 <img src="https://img.shields.io/github/repo-size/goldeagle/ansible-collection-metrics?style=flat-square">
 <img src="https://img.shields.io/github/last-commit/goldeagle/ansible-collection-metrics?style=flat-square">
 
 ## Table of Contents
-1. [Description](#chapter-1)
-2. [Technical Overview](#chapter-2)<br>
-  2.1. [PHP Extensions & Tools](#chapter-2-1)<br>
-  2.2. [Supported OSs](#chapter-2-3)
-1. [Quick Start](#chapter-3)
-2. [Software Lists](#chapter-4)<br>
-  4.1. [Dashboard](#chapter-4-1)<br>
-  4.2. [Time Series Database](#chapter-4-2)<br>
-  4.3. [Stream Process](#chapter-4-3)<br>
+1. [介绍](#chapter-1)
+2. [技术概况](#chapter-2)<br>
+  2.1. [软件介绍](#chapter-2-1)<br>
+  2.2. [支持的操作系统](#chapter-2-3)
+1. [快速开始](#chapter-3)
+2. [软件清单](#chapter-4)<br>
+  4.1. [数据可视化看板](#chapter-4-1)<br>
+  4.2. [时间序列型数据库](#chapter-4-2)<br>
+  4.3. [流处理](#chapter-4-3)<br>
 
-## 1. Description <a id="chapter-1"></a>
+## 1. 介绍 <a id="chapter-1"></a>
 
-Ansible collections for metric monitoring & IoT data stream. 
-Includes some popular softwares such like prometheus or grafana.
+指标数据和物联网数据流处理相关的 ansible 集合。
+包括一些类似 prometheus 或 grafana 这种流行的软件。
 
-## 2. Technical Overview <a id="chapter-2"></a>
+## 2. 技术概况 <a id="chapter-2"></a>
 
-### 2.1. PHP Extensions & Tools <a id="chapter-2-1"></a>
+### 2.1. 软件介绍<a id="chapter-2-1"></a>
 
 * chronograf - a dashboard in TICK stack
 * grafana - the most popular metric monitoring dashboard
@@ -34,24 +34,30 @@ Includes some popular softwares such like prometheus or grafana.
 * tdengine - a fast distributed time series database system for IoT scenes
 * telegraf - a metrics gathering agent in TICK stack
 
-### 2.2. Tested OSs  <a id="chapter-2-3"></a>
 
-* [x] Debian 10
-* [x] Ubuntu 20.04.1
-* [x] Kali 2020.3
-* [x] CentOS 8.2
-* [x] Fedora 32-1.6
+### 2.2. 支持的操作系统  <a id="chapter-2-3"></a>
+
+* [x] Debian
+* [x] Ubuntu
+* [x] Kali
+* [x] CentOS
+* [x] Fedora
 * [ ] Gentoo
 * [ ] MacOS
 
-## 3. Quick Start  <a id="chapter-3"></a>
+## 3. 快速开始  <a id="chapter-3"></a>
 
-### 3.1. Install ansible
+### 3.1. 安装 ansible
 
-First of all, download "ansible"
-- Linux:
+先下载安装 "ansible"
+- Debian & Ubuntu:
 ```bash
-$ apt install ansible
+$ sudo apt install ansible
+```
+
+- Centos 8 & Fedora 32:
+```bash
+$ sudo dnf install ansible
 ```
 
 - MacOS:
@@ -59,49 +65,49 @@ $ apt install ansible
 $ brew install ansible
 ```
 
-- Github 仓库
+- 从 github 仓库获取:
 ```bash
 $ git clone https://github.com/ansible/ansible
 ```
 
-### 3.2. Add a user for ansible
+### 3.2. 创建个 ansible 的用户
 
-Add user:
+添加用户：
 ```bash
-$ useradd {{ your_ansible_user }}-m -G users,sudo -s /bin/bash
-$ passwd
+$ sudo useradd {{ your_ansible_user }}-m -G users,sudo -s /bin/bash
+$ sudo passwd {{ your_ansible_user }}
 $ mkdir -p ~/.ssh
 ```
 
-Generate ssh key pair:
+生成用户的密钥对：
 ```bash
 $ ssh-keygen -t rsa -b 4096 -C "{{ your_ansible_user }}"
 ```
 
-Deploy the pub key:
+分发公钥：
 ```bash
 $ scp .ssh/id_rsa.pub {{ your_ansible_user }}@{{ target_host }}:~/.ssh/authorized_keys
 ```
 
-Test it:
+测试一下：
 ```bash
 $ ssh -T {{ your_ansible_user }}@{{ target_host }}
 ```
 
-### 3.3. Install this collection
+### 3.3. 安装集合
 
-Install this collection:
+安装集合：
 ```bash
 $ ansible-galaxy collection install goldeagle.metrics
 ```
 
-By default, the collection will be installed here:  
+默认情况下，集合会被安装到：
 ```bash
 ~/.ansible/collections/ansible_collections/goldeagle/metrics/
+```
 
-### 3.4. Create a playbook file to use the collection
-
-Then you can use the roles from the collection in your playbooks (playbook.yml etc.):
+### 3.4. 编写执行的剧本
+接下来就可以自定一个剧本文件使用集合里面包含的角色，（比如叫 playbook.yml）：
 
 ```yaml
 ---
@@ -114,10 +120,7 @@ Then you can use the roles from the collection in your playbooks (playbook.yml e
 
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    php_install_composer: true
-    php_install_pecl: true
-    php_install_swoole: true
-
+    
   collections:
     - goldeagle.metrics
 
@@ -127,26 +130,26 @@ Then you can use the roles from the collection in your playbooks (playbook.yml e
     - tdengine
 ```
 
-Run the playbook:
-
+执行这个剧本：
 ```bash
 $ ansible-playbook -i <your_hosts_file> playbook.yml -K
 ```
 
-## 4. Software Lists <a id="chapter-4"></a>
 
-### 4.1. Dashboard <a id="chapter-4-1"></a>
+## 4. 软件清单 <a id="chapter-4"></a>
+
+### 4.1. 数据可视化看板<a id="chapter-4-1"></a>
 
 - [x] chronograf
 - [x] grafana
 
-### 4.2. Time Series Database<a id="chapter-4-2"></a>
+### 4.2. 时间序列型数据库 <a id="chapter-4-2"></a>
 
 - [x] influxdb
 - [x] loki
 - [x] prometheus
 - [x] tdengine
 
-### 4.3. Stream Process<a id="chapter-4-3"></a>
+### 4.3. 流处理 <a id="chapter-4-3"></a>
 
-- tell me some
+- 跟我说几个吧，我加上去
