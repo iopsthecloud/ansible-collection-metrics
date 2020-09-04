@@ -26,13 +26,13 @@
 
 ### 2.1. 软件介绍<a id="chapter-2-1"></a>
 
-* chronograf - a dashboard in TICK stack
-* grafana - the most popular metric monitoring dashboard
-* influxdb - time series database in TICK stack
-* loki - a prometheus like time series database for logging
-* prometheus - the most popular metric time series database
-* tdengine - a fast distributed time series database system for IoT scenes
-* telegraf - a metrics gathering agent in TICK stack
+* chronograf - TICK 技术栈中的指标数据可视化看板
+* grafana - 最流行的指标数据可视化看板
+* influxdb - TICK 技术栈中的时序型数据库
+* loki - 参考 prometheus 专门针对 log 场景的时序型数据库
+* prometheus - 最流行的时序型数据库
+* tdengine - 针对物联网场景的分布式时序型数据库
+* telegraf - TICK 技术栈中的指标数据收集代理服务
 
 
 ### 2.2. 支持的操作系统  <a id="chapter-2-3"></a>
