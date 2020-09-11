@@ -9,7 +9,7 @@
       - cmake
       - epel-release
       - git
-    state: latest
+    state: present
 
 - name: Get the source codes
   git:
