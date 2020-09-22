@@ -14,7 +14,7 @@
     url: "https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/grafana-{{ version }}-1.x86_64.rpm"
     dest: "/tmp/grafana.deb"
     mode: "0755"
-    checksum: "sha256:{{ sha256sum }}"
+    checksum: "sha256:1fe585db9e7d79cd93231f737ec7dd1bd7e53abca5ea808ecea6c4f697a1a883"
 
 - name: Install grafana
   apt:
