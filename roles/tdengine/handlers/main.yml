@@ -11,3 +11,9 @@
     name: taosd
     state: restarted
     enabled: yes
+
+- name: stop tdendgine
+  service:
+    name: taosd
+    state: stopped
+    enabled: yes
