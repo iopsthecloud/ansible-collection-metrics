@@ -2,10 +2,10 @@
 
 - name: Download tar file
   get_url:
-    url: "{{ tar_url }}"
+    url: "{{ prometheus_tar_url }}"
     dest: "/tmp/prom.tar.gz"
     mode: "0644"
-    checksum: "sha256:{{ sha256sum }}"
+    checksum: "sha256:{{ prometheus_sha256sum }}"
 
 - name: Install prometheus
   unarchive:
@@ -15,7 +15,7 @@
 
 - name: Link promethues path
   file:
-    src: "/opt/prometheus-{{ version }}.linux-amd64"
+    src: "/opt/prometheus-{{ prometheus_version }}.linux-amd64"
     dest: "/usr/local/prometheus"
     state: link
   
@@ -37,5 +37,5 @@
 
 - name: Cleanup prometheus temp path
   file:
-    path: "/tmp/prometheus-{{ version }}.linux-amd64"
+    path: "/tmp/prometheus-{{ prometheus_version }}.linux-amd64"
     state: absent

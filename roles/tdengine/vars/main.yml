@@ -1,5 +1,4 @@
 ---
 
-version: "2.0"
 git_repo: "https://gitee.com/bison-fork/TDengine.git"
 first_endpoint: "tde-01"
