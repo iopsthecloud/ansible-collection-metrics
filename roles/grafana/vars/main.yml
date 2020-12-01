@@ -1,5 +1,5 @@
 ---
 
-grafana_version: "7.3.1"
-grafana_deb_sha256sum: "312f41bbbd45eca73afda39007553c59199672f271e0eaaaf84ba85d6dc13762"
-grafana_rpm_sha256sum: "43930026ae1eb47df4b5554c51ced7beac5fe6928275048d34d9419187f6d76e"
+grafana_version: "7.3.4"
+grafana_deb_sha256sum: "91452456a8502faecc544282906a085315176cba0d26c1242ebd313055edbf14"
+grafana_rpm_sha256sum: "f52d4136a3660a5368eae048016e1b892360c496ac229260946541b409d3bd16"
