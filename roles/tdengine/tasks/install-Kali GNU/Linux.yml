@@ -1,0 +1,42 @@
+---
+
+- name: Install deps
+  apt:
+    pkg: [
+      "gcc",
+      "cmake",
+      "build-essential",
+      "git"
+    ]
+    state: present
+    update_cache: yes
+
+- name: Check if tdengine has been installed
+  stat:
+    path: "/usr/local/taos/bin/taos"
+  register: taos_bin
+
+- name: Recursively remove taos source directory
+  file:
+    path: "/opt/taosdata-TDengine"
+    state: absent
+  when: taos_bin.stat.exists
+
+- name: Get the source codes
+  git:
+    repo:  "{{ git_repo }}"
+    dest: "/opt/taosdata-TDengine"
+    update: yes
+
+- name: Create target directory
+  file:
+    path: "/opt/taosdata-TDengine/target"
+    state: directory
+    mode: '0644'
+
+- name: Compile & install tdengine
+  shell:
+    cmd: "cmake .. && cmake --build . && make install"
+    chdir: "/opt/taosdata-TDengine/target/"
+  notify: 
+    - restart tdendgine
