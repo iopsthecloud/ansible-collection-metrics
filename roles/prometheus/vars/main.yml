@@ -1,5 +1,5 @@
 ---
 
-prometheus_version: "2.23.0"
-prometheus_sha256sum: "0f54cefdb946852947e35d4db8cfce394911ff586486f927c3887db4183cb643"
-prometheus_tar_url: "https://mirrors.tuna.tsinghua.edu.cn/github-release/prometheus/prometheus/LatestRelease/prometheus-{{ prometheus_version }}.linux-amd64.tar.gz"
+prometheus_version: "2.29.1"
+prometheus_sha256sum: "b85769c7e819ed27e7a09a7a15bdfea06e01484737011677d043b1b85a22f82e"
+prometheus_tar_url: "https://github.com/prometheus/prometheus/releases/download/v2.29.1/prometheus-{{ prometheus_version }}.linux-amd64.tar.gz"
