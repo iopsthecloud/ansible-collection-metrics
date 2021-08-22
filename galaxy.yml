@@ -3,13 +3,13 @@
 # The namespace of the collection. This can be a company/brand/organization or product namespace under which all
 # content lives. May only contain alphanumeric lowercase characters and underscores. Namespaces cannot start with
 # underscores or numbers and cannot contain consecutive underscores
-namespace: "goldeagle"
+namespace: "iopsthecloud"
 
 # The name of the collection. Has the same character restrictions as 'namespace'
 name: "metrics"
 
 # The version of the collection. Must be compatible with semantic versioning
-version: "0.2.6"
+version: "0.3.0"
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: "README.md"
@@ -17,7 +17,7 @@ readme: "README.md"
 # A list of the collection's content authors. Can be just the name or in the format 'Full Name <email> (url)
 # @nicks:irc/im.site#channel'
 authors:
-- "Bison 'goldeagle' Fan <bison@bitseed.cn>"
+- "Renaud RAKOTOMALALA <iopsthecloud@sharops.dev>"
 
 
 ### OPTIONAL but strongly recommended
@@ -45,16 +45,16 @@ tags: ["metrics", "development", "mvc", "collection", "devops","prometheus","gra
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: https://github.com/goldeagle/ansible-coolection-metrics
+repository: https://github.com/iopsthecloud/ansible-coolection-metrics
 
 # The URL to any online docs
-documentation: https://github.com/goldeagle/ansible-coolection-metrics/docs
+documentation: https://github.com/iopsthecloud/ansible-coolection-metrics/docs
 
 # The URL to the homepage of the collection/project
-homepage: https://github.com/goldeagle/ansible-coolection-metrics
+homepage: https://github.com/iopsthecloud/ansible-coolection-metrics
 
 # The URL to the collection issue tracker
-issues: https://github.com/goldeagle/ansible-coolection-metrics/issues
+issues: https://github.com/iopsthecloud/ansible-coolection-metrics/issues
 
 build_ignore:
   - "*.tar.gz"

@@ -1,4 +1,4 @@
-# Ansible Collections - goldeagle.metrics | [中文](README_zh.md)
+# Ansible Collections - goldeagle.metrics
 
 Ansible collections for metric monitoring & IoT data streaming.
 
